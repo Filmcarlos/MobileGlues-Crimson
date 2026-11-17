@@ -1,0 +1,139 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">MobileGlues Crimson</string>
+    <string name="app_subtitle">OpenGL ES 3.x Renderer Plugin Architecture</string>
+    <string name="app_badge_foundation">FOUNDATION BUILD</string>
+
+    <!-- Navigation Destinations -->
+    <string name="nav_home">Home</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_info">Info</string>
+    <string name="nav_about">About</string>
+    <string name="nav_logs">Diagnostics Log</string>
+
+    <!-- Common Actions & States -->
+    <string name="action_refresh">Refresh Status</string>
+    <string name="action_view_logs">Open In-App Logs</string>
+    <string name="action_copy_logs">Copy All Logs</string>
+    <string name="action_clear_logs">Clear Logs</string>
+    <string name="action_back">Navigate Back</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_retry">Retry Inspection</string>
+    <string name="action_reset_defaults">Reset Appearance Defaults</string>
+    <string name="status_coming_soon_badge">COMING SOON</string>
+    <string name="status_ready">READY</string>
+    <string name="status_missing">MISSING</string>
+    <string name="status_installed">INSTALLED</string>
+    <string name="status_not_installed">NOT DETECTED</string>
+    <string name="status_privacy_offline">100% OFFLINE • NO INTERNET PERMISSION</string>
+    <string name="msg_logs_copied">Diagnostic logs copied to clipboard</string>
+    <string name="msg_logs_cleared">Diagnostic logs cleared</string>
+    <string name="msg_preferences_reset">Preferences restored to Crimson defaults</string>
+
+    <!-- Home Screen -->
+    <string name="home_hero_title">MobileGlues Crimson</string>
+    <string name="home_hero_desc">Zero-telemetry OpenGL ES 3 renderer plugin engineered for Fold Craft Launcher (FCL) and Zalith Launcher.</string>
+    <string name="home_section_native_title">Native Library Inspection</string>
+    <string name="home_section_native_subtitle">Live verification of libmobileglues.so in application nativeLibraryDir</string>
+    <string name="home_native_detected_title">libmobileglues.so Detected</string>
+    <string name="home_native_missing_title">libmobileglues.so Not Bundled Yet</string>
+    <string name="home_native_missing_hint">Place compiled libmobileglues.so inside app/src/main/jniLibs/&lt;abi&gt;/ and rebuild APK. The app runs in graceful inspection mode until provided.</string>
+    <string name="home_native_label_abi">Primary Device ABI</string>
+    <string name="home_native_label_supported_abis">Supported ABIs</string>
+    <string name="home_native_label_dir">Native Library Path</string>
+    <string name="home_native_label_size">Binary Size</string>
+    <string name="home_native_size_none">0 KB (Awaiting .so file)</string>
+
+    <string name="home_section_launchers_title">Compatible Launchers</string>
+    <string name="home_section_launchers_subtitle">Live query via Android PackageManager (&lt;queries&gt; contract)</string>
+    <string name="home_launcher_fcl_name">Fold Craft Launcher (FCL)</string>
+    <string name="home_launcher_zalith_name">Zalith Launcher v2</string>
+    <string name="home_launcher_version_format">Version: %1$s (%2$d)</string>
+    <string name="home_launcher_not_found_desc">Package %1$s is not installed on this device</string>
+
+    <string name="home_section_quick_stats">Plugin Telemetry Overview</string>
+    <string name="home_stat_mc_range">MC Target</string>
+    <string name="home_stat_mc_value">1.17+</string>
+    <string name="home_stat_gles">Backend API</string>
+    <string name="home_stat_gles_value">GLES 3.x</string>
+    <string name="home_stat_crash_reports">Crash Logs</string>
+    <string name="home_stat_log_entries">Log Events</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Appearance &amp; Shell Settings</string>
+    <string name="settings_Appearance_section">Theme &amp; Brand Tokens</string>
+    <string name="settings_Appearance_subtitle">Customize Crimson Obsidian appearance and localization</string>
+    <string name="settings_theme_label">Theme Mode</string>
+    <string name="settings_theme_system">System Default</string>
+    <string name="settings_theme_dark">Crimson Dark (#0A0A0C)</string>
+    <string name="settings_theme_light">Alabaster Light</string>
+    <string name="settings_dynamic_color_title">Material You Dynamic Color</string>
+    <string name="settings_dynamic_color_subtitle">Disabled by default to preserve signature Crimson brand identity</string>
+    <string name="settings_language_label">Application Language</string>
+    <string name="settings_language_system">System Language</string>
+    <string name="settings_language_th">ไทย (Thai)</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_renderer_placeholder_title">Renderer Pipeline Configuration</string>
+    <string name="settings_renderer_placeholder_desc">GLSL shader cache control, angle/multidraw overrides, and framebuffer format tuning will arrive in the next milestone.</string>
+    <string name="settings_reset_dialog_title">Reset Appearance Settings?</string>
+    <string name="settings_reset_dialog_message">This will restore Crimson Dark theme, disable Dynamic Color, and reset language preference to system default.</string>
+
+    <!-- Tools Screen -->
+    <string name="tools_title">Diagnostic &amp; Plugin Tools</string>
+    <string name="tools_diagnostics_section">Active Foundation Utilities</string>
+    <string name="tools_diagnostics_subtitle">Inspect runtime logs and local crash stacktraces</string>
+    <string name="tools_open_logs_title">In-App Diagnostic Log Viewer</string>
+    <string name="tools_open_logs_subtitle">View real-time ring-buffer logs and copy for bug reports</string>
+    <string name="tools_crash_status_clean">No Uncaught Crashes Recorded</string>
+    <string name="tools_crash_status_found">%1$d Local Crash Report(s) Saved</string>
+    <string name="tools_crash_clear_action">Clear Saved Crash Reports</string>
+    <string name="tools_placeholder_title">Shader &amp; GLES Benchmark Suite</string>
+    <string name="tools_placeholder_desc">Automated glGetString capability prober, shader transpiler sandbox, and JNI symbol verifier are scheduled for the next development phase.</string>
+
+    <!-- Info Screen -->
+    <string name="info_title">Manifest Contract &amp; Specs</string>
+    <string name="info_manifest_section">Launcher Meta-Data Contract</string>
+    <string name="info_manifest_subtitle">Injected via manifestPlaceholders in build.gradle.kts</string>
+    <string name="info_key_fcl_plugin">fclPlugin</string>
+    <string name="info_key_des">des</string>
+    <string name="info_key_renderer">renderer</string>
+    <string name="info_key_boat_env">boatEnv</string>
+    <string name="info_key_pojav_env">pojavEnv</string>
+    <string name="info_key_min_mc">minMCVer</string>
+    <string name="info_key_max_mc">maxMCVer (Empty = Unlimited)</string>
+    <string name="info_placeholder_title">Hardware GLES Extension Matrix</string>
+    <string name="info_placeholder_desc">Detailed GPU vendor extensions, EGL config tables, and buffer storage support flags will be displayed here in a future update.</string>
+
+    <!-- About Screen -->
+    <string name="about_title">About &amp; Open Source Licenses</string>
+    <string name="about_plugin_card_title">MobileGlues Crimson Plugin</string>
+    <string name="about_version_format">Version %1$s (Code %2$d)</string>
+    <string name="about_package_format">Application ID: %1$s</string>
+    <string name="about_sdk_format">Min SDK 26 • Target SDK 35</string>
+    <string name="about_privacy_title">Strict Zero-Network Privacy Guarantee</string>
+    <string name="about_privacy_desc">This plugin declares zero internet permissions and contains no analytics, telemetry, or external crash reporters. All logs stay strictly inside your device sandbox.</string>
+    <string name="about_licenses_section">Open Source Attributions</string>
+    <string name="about_licenses_subtitle">Tap any component to inspect its full license notice</string>
+    <string name="about_license_mg_name">MobileGlues Native Renderer</string>
+    <string name="about_license_mg_spdx">GNU Lesser General Public License v2.1 (LGPL-2.1)</string>
+    <string name="about_license_mg_summary">Core OpenGL to OpenGL ES 3.x translation layer loaded dynamically via libmobileglues.so. Users retain full freedom under LGPL-2.1 to replace or relink the shared object inside the APK.</string>
+    <string name="about_license_compose_name">Android Jetpack Compose &amp; Material 3</string>
+    <string name="about_license_compose_spdx">Apache License 2.0</string>
+    <string name="about_license_compose_summary">Modern declarative UI toolkit, Material 3 design components, WindowSizeClass adaptive layouts, and Navigation Compose.</string>
+    <string name="about_license_androidx_name">AndroidX Core, Lifecycle &amp; DataStore</string>
+    <string name="about_license_androidx_spdx">Apache License 2.0</string>
+    <string name="about_license_androidx_summary"> Jetpack architecture components, Coroutines lifecycle integration, and Preferences DataStore persistence.</string>
+    <string name="about_license_fonts_name">Prompt &amp; JetBrains Mono Fonts</string>
+    <string name="about_license_fonts_spdx">SIL Open Font License 1.1 (OFL-1.1)</string>
+    <string name="about_license_fonts_summary">Thai/Latin geometric UI typography by Cadson Demak (Prompt) and developer monospace typography by JetBrains.</string>
+
+    <!-- Log Viewer Screen -->
+    <string name="logs_title">In-App Diagnostic Logs</string>
+    <string name="logs_subtitle">Local ring-buffer &amp; persistent file log</string>
+    <string name="logs_empty_title">Log Buffer is Empty</string>
+    <string name="logs_empty_desc">Application events, native inspection results, and launcher queries will appear here automatically.</string>
+    <string name="logs_clear_confirm_title">Clear All Diagnostic Logs?</string>
+    <string name="logs_clear_confirm_desc">This will remove all recorded log entries and crash traces from local app storage.</string>
+</resources>

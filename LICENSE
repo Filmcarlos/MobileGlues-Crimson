@@ -1,0 +1,42 @@
+                   GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 2.1, February 1999
+
+ Copyright (C) 1991, 1999 Free Software Foundation, Inc.
+ 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+[This is the first released version of the Lesser GPL.  It also counts
+ as the successor of the GNU Library Public License, version 2, hence
+ the version number 2.1.]
+
+                            Preamble
+
+  The licenses for most software are designed to take away your
+freedom to share and change it.  By contrast, the GNU General Public
+Licenses are intended to guarantee your freedom to share and change
+free software--to make sure the software is free for all its users.
+
+---
+
+THIRD-PARTY NOTICES & ATTRIBUTIONS FOR MOBILEGLUES CRIMSON
+
+1. MobileGlues (OpenGL -> OpenGL ES 3.x Translation Layer)
+   License: GNU Lesser General Public License v2.1 (LGPL-2.1)
+   Copyright (c) MobileGlues Contributors / Swung0x48 & Community
+   This application acts as an FCL / Zalith Launcher plugin wrapper and
+   configuration shell for `libmobileglues.so`. In accordance with LGPL-2.1,
+   users may replace or relink the dynamically loaded `libmobileglues.so`
+   shared object library inside the APK's `lib/<abi>/` directory.
+
+2. Android Jetpack Compose & AndroidX Libraries
+   License: Apache License, Version 2.0
+   Copyright (c) The Android Open Source Project
+
+3. Kotlin Standard Library & Kotlinx Coroutines / Serialization
+   License: Apache License, Version 2.0
+   Copyright (c) JetBrains s.r.o. and Kotlin Programming Language contributors
+
+4. Prompt & JetBrains Mono Fonts
+   License: SIL Open Font License 1.1 (OFL-1.1)
+   Copyright (c) Cadson Demak (Prompt), JetBrains s.r.o. (JetBrains Mono)

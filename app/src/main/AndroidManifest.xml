@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      Privacy Contract: Zero network permissions.
+      Explicitly remove any transitive INTERNET or ACCESS_NETWORK_STATE permissions if introduced.
+    -->
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="remove" />
+
+    <!-- Package visibility queries for Minecraft Java launchers on Android 11+ (API 30+) -->
+    <queries>
+        <package android:name="com.tungsten.fcl" />
+        <package android:name="com.movtery.zalithlauncher.v2" />
+    </queries>
+
+    <application
+        android:name=".CrimsonApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+
+        <!-- FCL / Zalith Launcher Renderer Plugin Contract (Injected via manifestPlaceholders) -->
+        <meta-data
+            android:name="fclPlugin"
+            android:value="${fclPlugin}" />
+        <meta-data
+            android:name="des"
+            android:value="${pluginDes}" />
+        <meta-data
+            android:name="renderer"
+            android:value="${rendererConfig}" />
+        <meta-data
+            android:name="boatEnv"
+            android:value="${boatEnv}" />
+        <meta-data
+            android:name="pojavEnv"
+            android:value="${pojavEnv}" />
+        <meta-data
+            android:name="minMCVer"
+            android:value="${minMCVer}" />
+        <meta-data
+            android:name="maxMCVer"
+            android:value="${maxMCVer}" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Also support FCL / Pojav plugin discovery intent conventions -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

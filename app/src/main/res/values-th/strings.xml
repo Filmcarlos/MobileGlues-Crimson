@@ -1,0 +1,139 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">MobileGlues Crimson</string>
+    <string name="app_subtitle">สถาปัตยกรรมปลั๊กอินเรนเดอเรอร์ OpenGL ES 3.x</string>
+    <string name="app_badge_foundation">รุ่นรากฐาน (FOUNDATION)</string>
+
+    <!-- Navigation Destinations -->
+    <string name="nav_home">หน้าแรก</string>
+    <string name="nav_settings">ตั้งค่า</string>
+    <string name="nav_tools">เครื่องมือ</string>
+    <string name="nav_info">ข้อมูล</string>
+    <string name="nav_about">เกี่ยวกับ</string>
+    <string name="nav_logs">บันทึกระบบ (Logs)</string>
+
+    <!-- Common Actions & States -->
+    <string name="action_refresh">ตรวจสอบสถานะใหม่</string>
+    <string name="action_view_logs">เปิดหน้าบันทึก Log</string>
+    <string name="action_copy_logs">คัดลอก Log ทั้งหมด</string>
+    <string name="action_clear_logs">ล้างบันทึก Log</string>
+    <string name="action_back">ย้อนกลับ</string>
+    <string name="action_confirm">ยืนยัน</string>
+    <string name="action_cancel">ยกเลิก</string>
+    <string name="action_retry">ลองตรวจสอบอีกครั้ง</string>
+    <string name="action_reset_defaults">คืนค่าเริ่มต้นของธีม</string>
+    <string name="status_coming_soon_badge">เร็วๆ นี้</string>
+    <string name="status_ready">พร้อมใช้งาน</string>
+    <string name="status_missing">ยังไม่พบไฟล์</string>
+    <string name="status_installed">ติดตั้งแล้ว</string>
+    <string name="status_not_installed">ไม่พบในเครื่อง</string>
+    <string name="status_privacy_offline">ออฟไลน์ 100% • ไม่มีสิทธิ์เข้าถึงอินเทอร์เน็ต</string>
+    <string name="msg_logs_copied">คัดลอกบันทึก Log ลงคลิปบอร์ดแล้ว</string>
+    <string name="msg_logs_cleared">ล้างบันทึก Log เรียบร้อยแล้ว</string>
+    <string name="msg_preferences_reset">คืนค่าการตั้งค่าเป็นค่าเริ่มต้น Crimson แล้ว</string>
+
+    <!-- Home Screen -->
+    <string name="home_hero_title">MobileGlues Crimson</string>
+    <string name="home_hero_desc">ปลั๊กอินเรนเดอเรอร์ OpenGL ES 3.x ที่เน้นความเป็นส่วนตัวสูงสุดสำหรับ Fold Craft Launcher (FCL) และ Zalith Launcher</string>
+    <string name="home_section_native_title">สถานะการตรวจพบ Native Library</string>
+    <string name="home_section_native_subtitle">ตรวจสอบไฟล์จริงของ libmobileglues.so ในโฟลเดอร์ nativeLibraryDir</string>
+    <string name="home_native_detected_title">ตรวจพบไฟล์ libmobileglues.so พร้อมใช้งาน</string>
+    <string name="home_native_missing_title">ยังไม่ได้ใส่ไฟล์ libmobileglues.so</string>
+    <string name="home_native_missing_hint">นำไฟล์ libmobileglues.so ที่คอมไพล์แล้วไปวางใน app/src/main/jniLibs/&lt;abi&gt;/ แล้วบิลด์ APK ใหม่ แอพจะทำงานแบบ Graceful โหมดตรวจสอบจนกว่าจะมีไฟล์</string>
+    <string name="home_native_label_abi">สถาปัตยกรรมหลักของเครื่อง (ABI)</string>
+    <string name="home_native_label_supported_abis">ABI ที่อุปกรณ์รองรับ</string>
+    <string name="home_native_label_dir">พาธ Native Library</string>
+    <string name="home_native_label_size">ขนาดไฟล์ไบนารี</string>
+    <string name="home_native_size_none">0 KB (รอการใส่ไฟล์ .so)</string>
+
+    <string name="home_section_launchers_title">Launcher ที่ติดตั้งในเครื่อง</string>
+    <string name="home_section_launchers_subtitle">ตรวจสอบจริงผ่าน Android PackageManager ตามสัญญา &lt;queries&gt;</string>
+    <string name="home_launcher_fcl_name">Fold Craft Launcher (FCL)</string>
+    <string name="home_launcher_zalith_name">Zalith Launcher v2</string>
+    <string name="home_launcher_version_format">เวอร์ชัน: %1$s (%2$d)</string>
+    <string name="home_launcher_not_found_desc">ไม่พบแพ็กเกจ %1$s ติดตั้งอยู่ในอุปกรณ์นี้</string>
+
+    <string name="home_section_quick_stats">ภาพรวมสถานะปลั๊กอิน</string>
+    <string name="home_stat_mc_range">เวอร์ชัน MC</string>
+    <string name="home_stat_mc_value">1.17+</string>
+    <string name="home_stat_gles">กราฟิก API</string>
+    <string name="home_stat_gles_value">GLES 3.x</string>
+    <string name="home_stat_crash_reports">บันทึกแครช</string>
+    <string name="home_stat_log_entries">จำนวน Log</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">ตั้งค่ารูปแบบและระบบ</string>
+    <string name="settings_Appearance_section">ธีมและอัตลักษณ์สี (Design Tokens)</string>
+    <string name="settings_Appearance_subtitle">ปรับแต่งโทนสี Crimson Obsidian และภาษาของแอพ</string>
+    <string name="settings_theme_label">โหมดธีม (Theme Mode)</string>
+    <string name="settings_theme_system">ตามระบบ (System)</string>
+    <string name="settings_theme_dark">มืดสนิท Crimson (#0A0A0C)</string>
+    <string name="settings_theme_light">สว่าง (Light)</string>
+    <string name="settings_dynamic_color_title">สีไดนามิกตามวอลเปเปอร์ (Dynamic Color)</string>
+    <string name="settings_dynamic_color_subtitle">ปิดเป็นค่าเริ่มต้นเพื่อคงเอกลักษณ์สีแดงเข้ม Crimson ของแบรนด์</string>
+    <string name="settings_language_label">ภาษาของแอพพลิเคชัน</string>
+    <string name="settings_language_system">ตามภาษาของเครื่อง</string>
+    <string name="settings_language_th">ไทย (Thai)</string>
+    <string name="settings_language_en">English (อังกฤษ)</string>
+    <string name="settings_renderer_placeholder_title">การตั้งค่าไปป์ไลน์เรนเดอเรอร์ขั้นสูง</string>
+    <string name="settings_renderer_placeholder_desc">ระบบจัดการแคช GLSL Shader, การตั้งค่า Multidraw/ANGLE และการปรับแต่งรูปแบบ Framebuffer จะพร้อมใช้งานในเฟสถัดไป (เร็วๆ นี้)</string>
+    <string name="settings_reset_dialog_title">คืนค่าเริ่มต้นของการแสดงผล?</string>
+    <string name="settings_reset_dialog_message">ระบบจะเปลี่ยนกลับเป็นธีมมืด Crimson Dark ปิด Dynamic Color และใช้ภาษาตามระบบ</string>
+
+    <!-- Tools Screen -->
+    <string name="tools_title">เครื่องมือตรวจสอบและวินิจฉัย</string>
+    <string name="tools_diagnostics_section">เครื่องมือพื้นฐานที่ใช้งานได้ทันที</string>
+    <string name="tools_diagnostics_subtitle">ตรวจสอบบันทึกการทำงาน (Log) และรายงานข้อผิดพลาดภายในเครื่อง</string>
+    <string name="tools_open_logs_title">หน้าต่างดูบันทึก Log ภายในแอพ</string>
+    <string name="tools_open_logs_subtitle">ดูเหตุการณ์การทำงานแบบเรียลไทม์พร้อมปุ่มคัดลอกเพื่อแจ้งปัญหา</string>
+    <string name="tools_crash_status_clean">ไม่พบประวัติการแครชของแอพ</string>
+    <string name="tools_crash_status_found">พบบันทึกแครชในเครื่อง %1$d รายการ</string>
+    <string name="tools_crash_clear_action">ล้างไฟล์รายงานแครช</string>
+    <string name="tools_placeholder_title">ชุดทดสอบ Shader และวัดประสิทธิภาพ GLES</string>
+    <string name="tools_placeholder_desc">เครื่องมือตรวจสอบขีดความสามารถ glGetString, ทดสอบแปลง Shader และตรวจสอบสัญลักษณ์ JNI จะเปิดใช้งานในเร็วๆ นี้</string>
+
+    <!-- Info Screen -->
+    <string name="info_title">ข้อมูลสัญญา Manifest และสเปก</string>
+    <string name="info_manifest_section">สัญญา Meta-Data สำหรับ Launcher</string>
+    <string name="info_manifest_subtitle">กำหนดค่าจากจุดเดียวผ่าน manifestPlaceholders ใน build.gradle.kts</string>
+    <string name="info_key_fcl_plugin">fclPlugin</string>
+    <string name="info_key_des">des (คำอธิบายปลั๊กอิน)</string>
+    <string name="info_key_renderer">renderer (สเปกเรนเดอเรอร์)</string>
+    <string name="info_key_boat_env">boatEnv (ตัวแปรแวดล้อม Boat)</string>
+    <string name="info_key_pojav_env">pojavEnv (ตัวแปรแวดล้อม Pojav)</string>
+    <string name="info_key_min_mc">minMCVer (เวอร์ชันขั้นต่ำ)</string>
+    <string name="info_key_max_mc">maxMCVer (เว้นว่าง = ไม่จำกัด)</string>
+    <string name="info_placeholder_title">ตารางส่วนขยายฮาร์ดแวร์ GLES (Extensions Matrix)</string>
+    <string name="info_placeholder_desc">ข้อมูลเชิงลึกของ GPU Vendor, ตารางการตั้งค่า EGL และสถานะการรองรับ Buffer Storage จะแสดงในหน้านี้เร็วๆ นี้</string>
+
+    <!-- About Screen -->
+    <string name="about_title">เกี่ยวกับและสัญญาอนุญาตโอเพนซอร์ส</string>
+    <string name="about_plugin_card_title">ปลั๊กอิน MobileGlues Crimson</string>
+    <string name="about_version_format">เวอร์ชัน %1$s (รหัสบิลด์ %2$d)</string>
+    <string name="about_package_format">รหัสแพ็กเกจ: %1$s</string>
+    <string name="about_sdk_format">Min SDK 26 • Target SDK 35</string>
+    <string name="about_privacy_title">รับประกันความเป็นส่วนตัว ปลอดการเชื่อมต่อเน็ต 100%</string>
+    <string name="about_privacy_desc">แอพนี้ไม่ขอสิทธิ์ INTERNET และไม่มีระบบติดตามตัวหรือส่งข้อมูลวิเคราะห์ใดๆ ข้อมูล Log และรายงานแครชทั้งหมดถูกเก็บไว้เฉพาะในพื้นที่ส่วนตัวของแอพในเครื่องคุณเท่านั้น</string>
+    <string name="about_licenses_section">กิตติกรรมประกาศและโอเพนซอร์ส (Licenses)</string>
+    <string name="about_licenses_subtitle">แตะที่รายการเพื่อดูรายละเอียดสัญญาอนุญาตฉบับเต็ม</string>
+    <string name="about_license_mg_name">MobileGlues Native Renderer</string>
+    <string name="about_license_mg_spdx">GNU Lesser General Public License v2.1 (LGPL-2.1)</string>
+    <string name="about_license_mg_summary">ไลบรารีแปลงคำสั่ง OpenGL เป็น OpenGL ES 3.x ที่โหลดแบบไดนามิกผ่าน libmobileglues.so ผู้ใช้มีสิทธิ์ตามสัญญา LGPL-2.1 ในการเปลี่ยนหรือลิงก์ไฟล์ .so ใหม่ได้</string>
+    <string name="about_license_compose_name">Android Jetpack Compose &amp; Material 3</string>
+    <string name="about_license_compose_spdx">Apache License 2.0</string>
+    <string name="about_license_compose_summary">ชุดเครื่องมือสร้าง UI ยุคใหม่, คอมโพเนนต์ Material Design 3, ระบบปรับขนาดหน้าจออัตโนมัติ และการนำทางแบบ Type-safe</string>
+    <string name="about_license_androidx_name">AndroidX Core, Lifecycle &amp; DataStore</string>
+    <string name="about_license_androidx_spdx">Apache License 2.0</string>
+    <string name="about_license_androidx_summary">โครงสร้างสถาปัตยกรรม Android Jetpack, การจัดการ Lifecycle ร่วมกับ Coroutines และการบันทึกค่าตั้งค่าด้วย DataStore</string>
+    <string name="about_license_fonts_name">ฟอนต์ Prompt และ JetBrains Mono</string>
+    <string name="about_license_fonts_spdx">SIL Open Font License 1.1 (OFL-1.1)</string>
+    <string name="about_license_fonts_summary">ฟอนต์ภาษาไทยและอังกฤษความคมชัดสูงโดย คัดสรร ดีมาก (Prompt) และฟอนต์สำหรับแสดงโค้ด/ค่าสถานะโดย JetBrains</string>
+
+    <!-- Log Viewer Screen -->
+    <string name="logs_title">บันทึกการทำงานของระบบ (Logs)</string>
+    <string name="logs_subtitle">บันทึกเหตุการณ์ภายในแอพเพื่อการตรวจสอบและแก้ไขปัญหา</string>
+    <string name="logs_empty_title">ยังไม่มีข้อมูลบันทึก Log</string>
+    <string name="logs_empty_desc">ผลการตรวจสอบไฟล์ .so และการค้นหา Launcher จะถูกบันทึกแสดงที่นี่โดยอัตโนมัติ</string>
+    <string name="logs_clear_confirm_title">ต้องการล้างบันทึก Log ทั้งหมดหรือไม่?</string>
+    <string name="logs_clear_confirm_desc">การดำเนินการนี้จะลบข้อความ Log และประวัติแครชที่บันทึกไว้ในเครื่องทั้งหมด</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "MobileGlues Crimson",
+  "description": "High-performance OpenGL ES 3 renderer plugin foundation for Minecraft Java launchers (FCL / Zalith Launcher) with Crimson dark architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
