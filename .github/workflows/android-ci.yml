@@ -25,14 +25,6 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Setup Android SDK Platform 36.1 & Build Tools
-        uses: android-actions/setup-android@v3
-
-      - name: Install Required Android SDK Packages
-        run: |
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager "platform-tools" "platforms;android-36.1" "platforms;android-35" "build-tools;36.0.0"
-
       - name: Setup Gradle 9.3.1
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -67,17 +59,17 @@ jobs:
           fi
 
       - name: Run Android Lint
-        run: gradle :app:lintDebug --stacktrace
+        run: gradle :app:lintDebug --no-configuration-cache --stacktrace
 
-      - name: Run Unit & Robolectric Tests
-        run: gradle :app:testDebugUnitTest --stacktrace
+      - name: Run Unit Tests
+        run: gradle :app:testDebugUnitTest --no-configuration-cache --stacktrace
 
       - name: Assemble Debug & Release APK
         env:
           KEYSTORE_PATH: ${{ github.workspace }}/my-upload-key.jks
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD || 'androidrelease' }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || 'androidrelease' }}
-        run: gradle :app:assembleDebug :app:assembleRelease --stacktrace
+        run: gradle :app:assembleDebug :app:assembleRelease --no-configuration-cache --stacktrace
 
       - name: Upload Lint & Unit Test Reports
         if: always()

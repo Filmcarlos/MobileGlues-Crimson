@@ -102,7 +102,8 @@ android {
       isIncludeAndroidResources = true
       isReturnDefaultValues = true
       all {
-        it.maxHeapSize = "2048m"
+        it.maxHeapSize = "1024m"
+        it.maxParallelForks = 1
         it.testLogging {
           events("passed", "skipped", "failed")
           showStandardStreams = true

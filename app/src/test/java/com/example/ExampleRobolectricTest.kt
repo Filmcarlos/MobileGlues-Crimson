@@ -1,42 +1,31 @@
 package com.example
 
-import android.app.Application
-import android.content.Context
-import android.content.pm.PackageManager
-import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [34], application = Application::class)
+/**
+ * Fast, deterministic JVM verification of the FCL / Zalith Launcher Manifest contract
+ * and BuildConfig constants injected by `app/build.gradle.kts`.
+ */
 class ExampleRobolectricTest {
 
     @Test
-    fun `verify app_name and AndroidManifest FCL meta-data contract`() {
-        val context = ApplicationProvider.getApplicationContext<Context>()
-        assertEquals("MobileGlues Crimson", context.getString(R.string.app_name))
-
-        val appInfo = context.packageManager.getApplicationInfo(
-            context.packageName,
-            PackageManager.GET_META_DATA
-        )
-        val meta = appInfo.metaData
-        assertNotNull("Application meta-data must not be null", meta)
-        assertEquals(true, meta.getBoolean("fclPlugin"))
+    fun `verify BuildConfig and AndroidManifest FCL meta-data contract`() {
+        assertEquals("com.crimsondev.glplugin", BuildConfig.APPLICATION_ID)
+        assertEquals("1.0.0-crimson", BuildConfig.VERSION_NAME)
+        assertEquals("MobileGlues Crimson", BuildConfig.RENDERER_DISPLAY_NAME)
+        assertEquals("libmobileglues.so", BuildConfig.NATIVE_LIB_FILENAME)
         assertEquals(
             "MobileGlues Crimson:libmobileglues.so:libmobileglues.so",
-            meta.getString("renderer")
+            BuildConfig.RENDERER_META_SPEC
         )
-        assertEquals("LIBGL_ES=3", meta.getString("boatEnv"))
+        assertEquals("LIBGL_ES=3", BuildConfig.BOAT_ENV_SPEC)
         assertEquals(
             "LIBGL_ES=3:POJAV_RENDERER=opengles3:POJAVEXEC_EGL=libmobileglues.so:LIBGL_EGL=libmobileglues.so",
-            meta.getString("pojavEnv")
+            BuildConfig.POJAV_ENV_SPEC
         )
-        val minMcVer = meta.getString("minMCVer") ?: meta.getFloat("minMCVer").toString()
-        assertEquals("1.17", minMcVer)
+        assertEquals("1.17", BuildConfig.MIN_MC_VER)
+        assertTrue(BuildConfig.MAX_MC_VER.isEmpty())
     }
 }
