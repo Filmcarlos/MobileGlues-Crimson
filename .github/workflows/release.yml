@@ -1,0 +1,30 @@
+name: Android Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - name: Build Release APK
+        run: ./gradlew assembleRelease
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: app/build/outputs/apk/release/app-release.apk
+          name: Release ${{ github.ref_name }}
+          body: |
+            ## MobileGlues Crimson Release ${{ github.ref_name }}
+            Built automatically from tag ${{ github.ref_name }}.
