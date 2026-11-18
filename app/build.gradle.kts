@@ -97,7 +97,23 @@ android {
       useLegacyPackaging = true
     }
   }
-  testOptions { unitTests { isIncludeAndroidResources = true } }
+  testOptions {
+    unitTests {
+      isIncludeAndroidResources = true
+      isReturnDefaultValues = true
+      all {
+        it.maxHeapSize = "2048m"
+        it.testLogging {
+          events("passed", "skipped", "failed")
+          showStandardStreams = true
+          showExceptions = true
+          showCauses = true
+          showStackTraces = true
+          exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        }
+      }
+    }
+  }
   dependenciesInfo {
     includeInApk = false
     includeInBundle = true

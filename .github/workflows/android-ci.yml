@@ -25,6 +25,14 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Setup Android SDK Platform 36.1 & Build Tools
+        uses: android-actions/setup-android@v3
+
+      - name: Install Required Android SDK Packages
+        run: |
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager "platform-tools" "platforms;android-36.1" "platforms;android-35" "build-tools;36.0.0"
+
       - name: Setup Gradle 9.3.1
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -59,24 +67,26 @@ jobs:
           fi
 
       - name: Run Android Lint
-        run: gradle :app:lintDebug
+        run: gradle :app:lintDebug --stacktrace
 
       - name: Run Unit & Robolectric Tests
-        run: gradle :app:testDebugUnitTest
+        run: gradle :app:testDebugUnitTest --stacktrace
 
       - name: Assemble Debug & Release APK
         env:
           KEYSTORE_PATH: ${{ github.workspace }}/my-upload-key.jks
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD || 'androidrelease' }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || 'androidrelease' }}
-        run: gradle :app:assembleDebug :app:assembleRelease
+        run: gradle :app:assembleDebug :app:assembleRelease --stacktrace
 
-      - name: Upload Lint Report Artifact
+      - name: Upload Lint & Unit Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lint-report
-          path: app/build/reports/lint-results-debug.html
+          name: diagnostic-reports
+          path: |
+            app/build/reports/lint-results-debug.html
+            app/build/reports/tests/testDebugUnitTest/
 
       - name: Upload Release & Debug APK Artifacts
         uses: actions/upload-artifact@v4
