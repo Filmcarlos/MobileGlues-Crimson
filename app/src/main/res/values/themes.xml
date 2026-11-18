@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MyApplication" parent="android:Theme.DeviceDefault.NoActionBar" />
+    <style name="Theme.MobileGluesCrimson" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/crimson_obsidian_bg</item>
+        <item name="android:colorBackground">@color/crimson_obsidian_bg</item>
+        <item name="android:colorPrimary">@color/crimson_primary</item>
+        <item name="android:colorAccent">@color/crimson_primary_bright</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/crimson_obsidian_bg</item>
+    </style>
+
+    <!-- Alias preserved for backwards compatibility -->
+    <style name="Theme.MyApplication" parent="Theme.MobileGluesCrimson" />
 </resources>

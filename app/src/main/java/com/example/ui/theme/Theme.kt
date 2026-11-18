@@ -1,5 +1,6 @@
 package com.example.ui.theme
 
+import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -8,14 +9,23 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
 import com.example.domain.model.AppThemeMode
 
-private val CrimsonDarkColorScheme = darkColorScheme(
+/**
+ * Full Material 3 Crimson Dark ColorScheme featuring deep reds, dark ruby containers,
+ * and layered dark charcoal/obsidian grays (#0A0A0C - #2A2A34).
+ */
+val CrimsonDarkColorScheme = darkColorScheme(
     primary = CrimsonDesignTokens.Colors.CrimsonPrimaryDark,
     onPrimary = CrimsonDesignTokens.Colors.CrimsonOnPrimaryDark,
     primaryContainer = CrimsonDesignTokens.Colors.CrimsonContainerDark,
     onPrimaryContainer = CrimsonDesignTokens.Colors.CrimsonOnContainerDark,
+    inversePrimary = CrimsonDesignTokens.Colors.CrimsonCoreVivid,
     secondary = CrimsonDesignTokens.Colors.SecondarySilverDark,
     onSecondary = CrimsonDesignTokens.Colors.OnSecondaryDark,
     secondaryContainer = CrimsonDesignTokens.Colors.SecondaryContainerDark,
@@ -30,13 +40,19 @@ private val CrimsonDarkColorScheme = darkColorScheme(
     onSurface = CrimsonDesignTokens.Colors.TextPrimaryDark,
     surfaceVariant = CrimsonDesignTokens.Colors.ObsidianSurfaceVariant,
     onSurfaceVariant = CrimsonDesignTokens.Colors.TextSecondaryDark,
+    surfaceTint = CrimsonDesignTokens.Colors.CrimsonPrimaryDark,
+    surfaceContainerLowest = Color(0xFF070709),
+    surfaceContainerLow = Color(0xFF101014),
+    surfaceContainer = CrimsonDesignTokens.Colors.ObsidianSurface,
+    surfaceContainerHigh = CrimsonDesignTokens.Colors.ObsidianSurfaceElevated,
+    surfaceContainerHighest = CrimsonDesignTokens.Colors.ObsidianSurfaceVariant,
     outline = CrimsonDesignTokens.Colors.ObsidianBorder,
     outlineVariant = CrimsonDesignTokens.Colors.ObsidianBorderSubtle,
     error = CrimsonDesignTokens.Colors.StatusErrorCoral,
     errorContainer = CrimsonDesignTokens.Colors.StatusErrorContainerDark
 )
 
-private val CrimsonLightColorScheme = lightColorScheme(
+val CrimsonLightColorScheme = lightColorScheme(
     primary = CrimsonDesignTokens.Colors.CrimsonPrimaryLight,
     onPrimary = CrimsonDesignTokens.Colors.CrimsonOnPrimaryLight,
     primaryContainer = CrimsonDesignTokens.Colors.CrimsonContainerLight,
@@ -55,16 +71,17 @@ private val CrimsonLightColorScheme = lightColorScheme(
     onSurface = CrimsonDesignTokens.Colors.TextPrimaryLight,
     surfaceVariant = CrimsonDesignTokens.Colors.AlabasterSurfaceVariant,
     onSurfaceVariant = CrimsonDesignTokens.Colors.TextSecondaryLight,
+    surfaceTint = CrimsonDesignTokens.Colors.CrimsonPrimaryLight,
     outline = CrimsonDesignTokens.Colors.AlabasterBorder
 )
 
 /**
- * Root theme for MobileGlues Crimson.
+ * Root Crimson Material 3 Theme for [com.example.MainActivity].
  * Defaults to [AppThemeMode.DARK] (#0A0A0C) and `dynamicColor = false` so the signature
- * Crimson Obsidian aesthetic remains consistent unless the user explicitly toggles them in Settings.
+ * deep red & dark gray aesthetic is active out-of-the-box.
  */
 @Composable
-fun MobileGluesCrimsonTheme(
+fun CrimsonTheme(
     themeMode: AppThemeMode = AppThemeMode.DARK,
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
@@ -84,10 +101,33 @@ fun MobileGluesCrimsonTheme(
         else -> CrimsonLightColorScheme
     }
 
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            val window = (view.context as? Activity)?.window ?: return@SideEffect
+            val insetsController = WindowCompat.getInsetsController(window, view)
+            insetsController.isAppearanceLightStatusBars = !isDark
+            insetsController.isAppearanceLightNavigationBars = !isDark
+        }
+    }
+
     MaterialTheme(
         colorScheme = colorScheme,
         typography = CrimsonDesignTokens.TypographyTokens.MaterialTypography,
         shapes = CrimsonDesignTokens.Radius.MaterialShapes,
+        content = content
+    )
+}
+
+@Composable
+fun MobileGluesCrimsonTheme(
+    themeMode: AppThemeMode = AppThemeMode.DARK,
+    dynamicColor: Boolean = false,
+    content: @Composable () -> Unit
+) {
+    CrimsonTheme(
+        themeMode = themeMode,
+        dynamicColor = dynamicColor,
         content = content
     )
 }
